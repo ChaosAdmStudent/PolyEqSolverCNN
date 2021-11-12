@@ -3,7 +3,7 @@ Made a Handwritten Polynomial Equation Solver using CNN
 
 The architecture of the model used is given below: 
 
-![CNN Model](https://imgur.com/a/h0mm9Kg)
+![CNN Model](https://i.ibb.co/J31vzMB/CNN-2.png)
 
 # PolyEquations.py 
 
