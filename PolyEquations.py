@@ -7,6 +7,7 @@ dic={0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:'+',11:'-',12:'=',13:'x'}
 
 #print equation 
 def printEq(x):
+    detected_eq = [] 
     flag=0
     for i in range(len(x)):
         if flag==1:
@@ -14,9 +15,13 @@ def printEq(x):
             continue
         if i!=len(x)-1 and dic[x[i]]=='x'and x[i+1]!=10 and x[i+1]!=11 and x[i+1]!=12:
             print('x^'+str(dic[x[i+1]]), end=" ")
+            detected_eq.append('x^'+str(dic[x[i+1]])) 
             flag=1
         else :
             print(dic[x[i]], end=" ")
+            detected_eq.append(str(dic[x[i]]))
+    
+    return ' '.join(detected_eq)
 
 # Find degree of polynomial
 def highdegree(x):
@@ -141,7 +146,7 @@ def changeSign(index,x):
                     x[i] = -1*x[i]   
 
 def polyEqSolver(x): 
-    printEq(x)
+    detected_eq = printEq(x)
     print('\n ------------------------------\n')
     degree=highdegree(x)
     #equality index
@@ -173,10 +178,14 @@ def polyEqSolver(x):
     # ------------------------------------
     #Checking degrees of all X's in the equation 
     
-    x_degs = [(i-1, x[i-1], x[i+1]) for i, deg in enumerate(x) if (deg == 13 and i !=len(x) - 1)]
+    x_degs = [(i-1, x[i-1], x[i+1]) for i, deg in enumerate(x) if (deg == 13 and i !=len(x) - 1 and i!=0)]
     
     #If any of the X doesn't have degree written explicitly (That is, degree = 1) 
     x_degs = x_degs + [(i-1, x[i-1] ,1) for i, deg in enumerate(x) if (deg == 13 and (i == len(x) - 1 or x[i+1] >=10))]
+
+    # If any of X doesn't have coeff written explicitly (That is, coeff = 1) 
+    x_degs = x_degs + [(i-1, 1 ,x[i+1]) for i, deg in enumerate(x) if (deg == 13 and (i == 0 or x[i-1] >=10))]
+
     
     for deg_data in x_degs:
         print('Index of Coefficient: ',  deg_data[0]) 
@@ -228,12 +237,46 @@ def polyEqSolver(x):
     
     #Linear 
     if k == 1:
-         return linear_solver(a=eq_coeffs[0], b = constant) 
+        result = [
+        '<div style="color: orange;">' , 'Detected Equation ', '</div>', 
+        '<div style="color: white;">' , detected_eq, '</div>',  
+        '<br>',
+        '<div style="color: white;">' , 'Root: ' , str(linear_solver(a=eq_coeffs[0], b = constant)) ,'</div>' 
+        ] 
+
+        return ''.join(result)
     
     #Quadratic
     if k == 2:
-        return quadratic_solver(a=eq_coeffs[1], b = eq_coeffs[0], c = constant)  
-    
+        roots =  quadratic_solver(a=eq_coeffs[1], b = eq_coeffs[0], c = constant)
+        roots = [str(x) for x in roots] 
+
+        result = [
+        '<div style="color: orange;">' , 'Detected Equation ',  '</div>', 
+        '<div style="color: white;">' , detected_eq, '</div>',  
+        '<br>',    
+        '<div style="color: white;">' , 'Root 1: ' , roots[0] , '</div>' , 
+        '<br>' , 
+        '<div style="color: white;">' , 'Root 2: ' , roots[1] , '</div>' , 
+        '<br>' 
+        ]
+
+        return ''.join(result)
     #Cubic
     if k == 3: 
-        return cubic_solver(a = eq_coeffs[2], b = eq_coeffs[1], c = eq_coeffs[0], d = constant) 
+        roots =  cubic_solver(a = eq_coeffs[2], b = eq_coeffs[1], c = eq_coeffs[0], d = constant)
+        roots = [str(x) for x in roots] 
+
+        result = [
+        '<div style="color: orange;">' , 'Detected Equation ',  '</div>', 
+        '<div style="color: white;">' , detected_eq, '</div>',  
+        '<br>',    
+        '<div style="color: white;">' , 'Root 1: ' , roots[0] , '</div>' , 
+        '<br>' , 
+        '<div style="color: white;">' , 'Root 2: ' , roots[1] , '</div>' , 
+        '<br>' , 
+        '<div style="color: white;">' ,'Root 3: ' , roots[2] , '</div>' , 
+        '<br>' 
+        ]
+
+        return ''.join(result)
