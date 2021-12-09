@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Helps make the website responsive -->
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Polynomial Equation Solver</title>
+    <!-- To link the css file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <!-- To add a navigation bar on top -->
+            <h3 style="font-weight: bold; color:gainsboro; font-size:larger">HANDWRITTEN EQUATION SOLVER</h3>
+            <div class="nav-Links">
+                <ul>
+                    <li><a href="#home" class="active">HOME</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="./solver.html">SOLVER</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box" id="home">
+            <h1>Handwritten Polynomial Equation Solver!</h1>
+            <p>The model has been made using a Deep Learning algorithm - Convolutional Neural Networks (CNN). <br> It takes in an image as the input and can solve any handwritten polynomial <br> equation upto a third degree polynomial. We hope you find it
+                useful!
+            </p>
+            <a href="solver.html" class="hero-btn">USE THE SOLVER!</a>
+        </div>
+    </section>
+
+    <!-- Page for About Us -->
+    <section class="about" id="about">
+        <h1>ABOUT THE CREATORS</h1>
+        <p>A trio of 3rd year students who are ardent pursuers of knowledge in the field of Machine Learning and Artificial Intelligence</p>
+
+        <div class="row">
+            <div class="about-col">
+                <img src="../static/lakshya.jpeg" alt="Lakshya">
+                <div class="layer">
+                    <h3>LAKSHYA GUPTA</h3>
+                    <br>
+                    <p>Hi! I am a CS undergrad from VIT Vellore who has a keen interest in the field of Machine Learning and Automation. I love working on new ideas that incorporate the use of AI/ML in innovative ways. Some of such contributions of mine
+                        can be seen in the 'PolyEquationSolver' and 'DinoCNN' projects where I use Computer Vision to accomplish tasks that weren't tackled before.</p>
+                    <br>
+                    <a href="https://github.com/ChaosAdmStudent" target="_blank">
+                        <i class="fa fa-github fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/lakshyaadm/" target="_blank">
+                        <i class="fa fa-linkedin fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/lakshyagupta1/" target="_blank">
+                        <i class="fa fa-instagram fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-col">
+                <img src="../static/anannya.jpeg" alt="Anannya">
+                <div class="layer">
+                    <h3>ANANNYA POPAT</h3>
+                    <br>
+                    <p>An insightful 3rd-year Computer Science and Engineering student at Vellore Institute of Technology who is passionate about Artificial Intelligence and Machine Learning, with a keen interest in UI/UX designing and Android App Development
+                        as well. I'm eager to contribute to team success through hard work, attention to detail, and excellent organizational skills.</p>
+                    <br>
+                    <a href="https://github.com/Anannyap7" target="_blank">
+                        <i class="fa fa-github fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/anannya-popat-/" target="_blank">
+                        <i class="fa fa-linkedin fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/anannyap7/" target="_blank">
+                        <i class="fa fa-instagram fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-col">
+                <img src="../static/Abhimanyu.jpg" alt="Abhimanyu">
+                <div class="layer">
+                    <h3>ABHIMANYU VERMA</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <br>
+                    <a href="https://github.com/abhimanyouknow" target="_blank">
+                        <i class="fa fa-github fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhimanyu-verma-71491619b//" target="_blank">
+                        <i class="fa fa-linkedin fa-3x"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/abhimanyouknow/" target="_blank">
+                        <i class="fa fa-instagram fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

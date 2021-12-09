@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #232424;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../math_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 1% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+li {
+    display: inline;
+    padding: 8px 12px;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    padding: 8px 12px;
+}
+
+li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    background-color: #d81651;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+
+li a:hover {
+    color: gainsboro;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: gainsboro;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 48px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 16px;
+    color: gainsboro;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: gainsboro;
+    border: 1px solid gainsboro;
+    padding: 12px 34px;
+    font-size: 15px;
+    font-weight: bolder;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #d81651;
+    background: #d81651;
+    transition: 0.5s;
+}
+
+
+/* About Us Page */
+
+.about {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.about h1 {
+    color: #2e2e2e;
+    font-size: 36px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #d81651;
+    padding-bottom: 20px;
+    text-underline-offset: 10px;
+}
+
+.about p {
+    color: #2e2e2e;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-col img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    height: auto;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(216, 22, 81, 0.8);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    opacity: 1;
+}
+
+.layer p {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 20px 30px;
+    font-weight: 500;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover p {
+    opacity: 1;
+}
+
+.layer .fa {
+    padding-top: 40px;
+    padding: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover .fa {
+    opacity: 0.7;
+}
+
+.layer .fa:hover {
+    opacity: 1;
+}
+
+.solver {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #232424;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../math_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.solver-topic {
+    width: 90%;
+    color: gainsboro;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.solver-topic h2 {
+    font-size: 36px;
+}
+
+.img-preview {
+    width: 500px;
+    height: 150px;
+    border: 5px solid #d81651;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 35%;
+}
+
+.img-preview>div {
+    width: 100%;
+    height: 100%;
+    background-size: 500px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-label {
+    display: inline-block;
+    text-decoration: none;
+    color: gainsboro;
+    border: 1px solid gainsboro;
+    padding: 12px 34px;
+    font-size: 15px;
+    font-weight: 500;
+    background: transparent;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.upload-label:hover {
+    border: 1px solid #d81651;
+    background: #d81651;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    /* Light grey */
+    border-top: 8px solid #d81651;
+    /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
