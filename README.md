@@ -1,5 +1,5 @@
 # PolyEqSolverCNN
-Made a Handwritten Polynomial Equation Solver using CNN as a group project (Lakshya Gupta, Anannya Popat, Abhimanyu Verma)
+Made a Handwritten Polynomial Equation Solver using CNN as a group project (@ChaosAdmStudent, @Anannyap7, @abhimanyouknow)
 
 The architecture of the model used is given below: 
 
